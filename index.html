@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/requirejs/require.js" data-main="js/index"></script>
+    <link rel="stylesheet" href="dist/css/base.css">
+    <link rel="stylesheet" href="dist/css/header.css">
+    <link rel="stylesheet" href="dist/css/footer.css">
+    <link rel="stylesheet" href="dist/css/prods.css">
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="content" style="width:1240px;height:1460px;margin:0 auto;">
+        <div class="scr-img" style="width:1240px;height:460px;margin:0 auto;background:red"></div>
+        <div class="nice-goods" style="height:100px;background:blue;"></div>
+        <div class="main-goods"></div>
+    </div>
+    <div class="footer"></div>
+    <script src="lib/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        $(".header").load("html/include/header.html");
+        $(".footer").load("html/include/footer.html");
+    </script>
+    <script type="text/html" id="main-goods">
+        <% for (var i = 0; i < list.length; i++) {
+			var prod = list[i];
+		%>
+            <div class="prod-1">
+                <div class="title">
+                    <%= prod.name %>
+                </div>
+                <div class="buys">本款产品月销量
+                    <span><%=prod.num %></span>
+                </div>
+                <div class="img">
+                    <img src="<%= prod.imgSrc %>">
+                </div>
+                <div class="price">
+                    <span><%= prod.price %></span>元
+                </div>
+            </div>
+            <% } %>
+    </script>
+</body>
+
+</html>

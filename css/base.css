@@ -1,0 +1,43 @@
+body {
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    font: 12px/150% SimSun, "Microsoft Yahei", Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+    behavior: url("/theme/feike_pc/css/csshover.htc");
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: #000;
+    outline: none;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none
+}
+
+textarea {
+    resize: none
+}

@@ -1,0 +1,42 @@
+.prod-1 {
+    height: 332px;
+    width: 288px;
+    position: relative;
+    float: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    font: "Microsoft Yahei", sans-serif;
+    background: #f6f6f6;
+    .title {
+        height: 14px;
+        line-height: 14px;
+        margin-left: 15px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .buys {
+        margin-left: 25px;
+        font-size: 12px;
+        color: #b0b0b0;
+        span {
+            font-size: 15px;
+            color: #ff6700;
+        }
+    }
+    .img {
+        position: absolute;
+        top: 43px;
+        left: 25px;
+    }
+    .price {
+        font-size: 12px;
+        position: absolute;
+        left: 25px;
+        top: 60px;
+        span {
+            font-size: 15px;
+        }
+    }
+}
