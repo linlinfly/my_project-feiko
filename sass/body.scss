@@ -1,0 +1,196 @@
+                        .main-goods {
+                            height: 1143px;
+                            background: #f6f6f6;
+                            h2 {
+                                font-size: 25px;
+                                font-weight: bold;
+                                height: 77px;
+                                line-height: 77px;
+                                display: block;
+                                margin-left: 20px;
+                            }
+                        }
+                        
+                        .sale-goods {
+                            height: 1143px;
+                            background: white;
+                            h2 {
+                                font-size: 25px;
+                                font-weight: bold;
+                                height: 77px;
+                                line-height: 77px;
+                                display: block;
+                                margin-left: 20px;
+                            }
+                        }
+                        
+                        .nice-goods {
+                            height: 170px;
+                            border-bottom: 1px solid #dfdfdf;
+                            margin-bottom: 15px;
+                            .list {
+                                width: 412px;
+                                height: 170px;
+                                border-left: 1px solid #dfdfdf;
+                                float: left;
+                                position: relative;
+                                display: inline-block;
+                                .dask {
+                                    position: absolute;
+                                    width: 412px;
+                                    top: 170px;
+                                    height: 0px;
+                                    opacity: 0;
+                                }
+                                .in_b {
+                                    width: 412px;
+                                    height: 170px;
+                                    border-left: 1px solid #dfdfdf;
+                                    ;
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                        
+                        .scr-img {
+                            height: 460px;
+                            width: 1240px;
+                            margin: 0 auto;
+                            position: relative;
+                            #container {
+                                position: absolute;
+                                width: 1240px;
+                                height: 460px;
+                                overflow: hidden;
+                                .pic>li {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    img {
+                                        width: 1240px;
+                                        height: 460px;
+                                    }
+                                }
+                                .position {
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 0;
+                                    background: #000;
+                                    opacity: 0.4;
+                                    width: 400px;
+                                    text-align: center;
+                                    >li {
+                                        width: 10px;
+                                        height: 10px;
+                                        margin: 0 2px;
+                                        display: inline-block;
+                                        -webkit-border-radius: 5px;
+                                        border-radius: 5px;
+                                        background-color: #afafaf;
+                                    }
+                                    .cur {
+                                        background-color: #ff0000;
+                                    }
+                                }
+                            }
+                            .nav {
+                                width: 183px;
+                                font-size: 18px;
+                                float: left;
+                                .nav-left {
+                                    padding: 20px 0;
+                                    display: block;
+                                    height: 420px;
+                                    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+                                    position: relative;
+                                    .side-nav:hover {
+                                        >a {
+                                            background: #0c82d9;
+                                        }
+                                        .sn {
+                                            display: block;
+                                        }
+                                    }
+                                    .side-nav {
+                                        height: 42px;
+                                        line-height: 42px;
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                        white-space: nowrap;
+                                        display: inline-block;
+                                        width: 183px;
+                                        >a {
+                                            width: 158px;
+                                            height: 42px;
+                                            display: block;
+                                            margin-left: 0;
+                                            color: #fff;
+                                            padding-left: 25px;
+                                        }
+                                        em {
+                                            font-size: 13px;
+                                            position: absolute;
+                                            right: 20px;
+                                        }
+                                        .sn {
+                                            display: none;
+                                            width: 750px;
+                                            height: 460px;
+                                            position: absolute;
+                                            left: 183px;
+                                            top: 0px;
+                                            border: 1px solid #d6d8d9;
+                                            border-left: 0;
+                                            background: #fff;
+                                            .children {
+                                                height: 455px;
+                                                padding: 2px 0;
+                                                float: left;
+                                                width: 245px;
+                                                .list {
+                                                    float: left;
+                                                    width: 265px;
+                                                    height: 76px;
+                                                    position: relative;
+                                                    .link {
+                                                        width: 170px;
+                                                        display: block;
+                                                        padding: 18px 20px;
+                                                        line-height: 40px;
+                                                        color: #333;
+                                                        transition: color 0.2s;
+                                                        img {
+                                                            margin-right: 12px;
+                                                            vertical-align: middle;
+                                                            width: 40px;
+                                                            height: 40px;
+                                                        }
+                                                        span {
+                                                            font-size: 13px;
+                                                            line-height: 40px;
+                                                        }
+                                                    }
+                                                    .btn:hover {
+                                                        background: #26a3ff;
+                                                        color: #fff;
+                                                    }
+                                                    .btn {
+                                                        position: absolute;
+                                                        right: 10px;
+                                                        top: 28px;
+                                                        width: 50px;
+                                                        height: 22px;
+                                                        line-height: 22px;
+                                                        border-color: #26a3ff;
+                                                        color: #26a3ff;
+                                                        font-size: 12px;
+                                                        border: 1px solid #26a3ff;
+                                                        text-align: center;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }

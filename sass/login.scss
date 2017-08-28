@@ -1,0 +1,197 @@
+                        .title {
+                            width: 452px;
+                            padding: 83px 0 165px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                            font-family: "Microsoft Yahei", sans-serif;
+                            h1 {
+                                text-align: center;
+                                color: #0c82d9;
+                                font-size: 20px;
+                            }
+                            .lead {
+                                margin-top: 20px;
+                                font-size: 16px;
+                                width: 100%;
+                                height: 42px;
+                                line-height: 42px;
+                                background: #2264af;
+                                display: inline-block;
+                                a {
+                                    color: #fff;
+                                }
+                            }
+                            .cont {
+                                width: 300px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                .login-form .fom {
+                                    width: 300px;
+                                    margin-top: 38px;
+                                    .user {
+                                        width: 298px;
+                                        height: 31px;
+                                        line-height: 30px;
+                                        border: 1px solid #e7e7e7;
+                                        margin-bottom: 23px;
+                                        position: relative;
+                                        span {
+                                            left: 0;
+                                            top: 0;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-right: 1px solid #e6e6e6;
+                                            background: url("/../images/user-id.png") no-repeat center center;
+                                            background-size: 50%;
+                                            display: inline-block;
+                                            position: absolute;
+                                        }
+                                        .user-name {
+                                            padding-left: 40px;
+                                            width: 258px;
+                                            height: 30px;
+                                            line-height: 30px;
+                                            border: 0;
+                                        }
+                                    }
+                                    .pwd {
+                                        width: 298px;
+                                        height: 31px;
+                                        line-height: 30px;
+                                        border: 1px solid #e7e7e7;
+                                        margin-bottom: 23px;
+                                        position: relative;
+                                        span {
+                                            left: 0;
+                                            top: 0;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-right: 1px solid #e6e6e6;
+                                            background: url("/../images/user-pwd.png") no-repeat center center;
+                                            background-size: 50%;
+                                            display: inline-block;
+                                            position: absolute;
+                                        }
+                                        .password {
+                                            padding-left: 40px;
+                                            width: 258px;
+                                            height: 30px;
+                                            line-height: 30px;
+                                            border: 0;
+                                        }
+                                    }
+                                }
+                                .sure {
+                                    width: 300px;
+                                    height: 39px;
+                                    line-height: 39px;
+                                    margin-bottom: 10px;
+                                    background-color: #0c82d9;
+                                    font-size: 15px;
+                                    margin-top: 10px;
+                                    >a {
+                                        width: 300px;
+                                        height: 39px;
+                                        display: block;
+                                        color: #fff;
+                                    }
+                                }
+                                .msg {
+                                    a {
+                                        color: #0c82d9;
+                                    }
+                                    width: 175px;
+                                    height: 30px;
+                                    float: left;
+                                    display: block;
+                                    .free {
+                                        padding-left: 20px;
+                                        float: left;
+                                        position: relative;
+                                        display: inline;
+                                        >input {
+                                            position: absolute;
+                                            top: 2px;
+                                            left: 0;
+                                        }
+                                    }
+                                }
+                                .nothing>span {
+                                    float: right;
+                                    .now {
+                                        color: #0c82d9;
+                                    }
+                                }
+                                .check-login {
+                                    margin-top: 25px;
+                                    fieldset {
+                                        border: 0;
+                                        border-top: 1px solid #e0e0e0;
+                                        padding-top: 10px;
+                                        display: block;
+                                        .text {
+                                            width: 134px;
+                                            font-size: 14px;
+                                            color: #b0b0b0;
+                                            padding: 0 25px;
+                                            margin: 0 auto;
+                                            text-align: center;
+                                        }
+                                    }
+                                    >ul {
+                                        width: 240px;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        >li {
+                                            float: left;
+                                            padding: 0 20px 10px 0;
+                                            .wx:hover {
+                                                background-position: -99px -33px;
+                                            }
+                                            .wx {
+                                                display: block;
+                                                width: 32px;
+                                                height: 32px;
+                                                background: url("/../images/login_icon_bg.png") no-repeat;
+                                                background-position: -99px 0;
+                                                margin-left: 8px;
+                                            }
+                                            .qq:hover {
+                                                background-position: 0 -33px;
+                                            }
+                                            .qq {
+                                                display: block;
+                                                width: 32px;
+                                                height: 32px;
+                                                background: url("/../images//login_icon_bg.png") no-repeat;
+                                                background-position: 0 0;
+                                                margin-left: 8px;
+                                            }
+                                            .sina:hover {
+                                                background-position: -33px -33px;
+                                            }
+                                            .sina {
+                                                display: block;
+                                                width: 32px;
+                                                height: 32px;
+                                                background: url("/../images//login_icon_bg.png") no-repeat;
+                                                background-position: -33px 0;
+                                                margin-left: 8px;
+                                            }
+                                            .zhi:hover {
+                                                background-position: -66px -33px;
+                                            }
+                                            .zhi {
+                                                display: block;
+                                                width: 32px;
+                                                height: 32px;
+                                                background: url("/../images//login_icon_bg.png") no-repeat;
+                                                background-position: -66px 0;
+                                                margin-left: 8px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }

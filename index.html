@@ -11,25 +11,226 @@
     <link rel="stylesheet" href="dist/css/header.css">
     <link rel="stylesheet" href="dist/css/footer.css">
     <link rel="stylesheet" href="dist/css/prods.css">
+    <link rel="stylesheet" href="dist/css/body.css">
+    <script src="lib/jquery/jquery-1.12.4.min.js"></script>
+
 </head>
 
 <body>
     <div class="header"></div>
-    <div class="content" style="width:1240px;height:1460px;margin:0 auto;">
-        <div class="scr-img" style="width:1240px;height:460px;margin:0 auto;background:red"></div>
-        <div class="nice-goods" style="height:100px;background:blue;"></div>
-        <div class="main-goods"></div>
+    <div class="content" style="width:1240px;height:2560px;margin:0 auto;">
+        <div class="scr-img" style="width:1240px;height:460px;margin:0 auto;">
+
+            <div id="container">
+                <ul class="pic">
+                    <li><img src="images/1240.jpg"></li>
+                    <li><img src="images/1240i.jpg"></li>
+                    <li><img src="images/4.jpg"></li>
+                    <li><img src="images/6.jpg"></li>
+                    <li><img src="images/1240.jpg"></li>
+                </ul>
+                <ul class="position">
+                    <li class="cur"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+            <script>
+                $(function() {
+                    //第一张显示
+                    $(".pic li").eq(0).show();
+                    //鼠标滑过手动切换，淡入淡出
+                    $(".position li").mouseover(function() {
+                        $(this).addClass('cur').siblings().removeClass("cur");
+                        var index = $(this).index();
+                        i = index; //不加这句有个bug，鼠标移出小圆点后，自动轮播不是小圆点的后一个
+                        // $(".pic li").eq(index).show().siblings().hide();
+                        $(".pic li").eq(index).fadeIn(500).siblings().fadeOut(500);
+                    });
+                    //自动轮播
+                    var i = 0;
+                    var timer = setInterval(play, 2000);
+                    //向右切换
+                    var play = function() {
+                            i++;
+                            i = i > 2 ? 0 : i;
+                            $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
+                            $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
+                        }
+                        //向左切换
+                    var playLeft = function() {
+                            i--;
+                            i = i < 0 ? 2 : i;
+                            $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
+                            $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
+                        }
+                        //鼠标移入移出效果
+                    $(".container").hover(function() {
+                        clearInterval(timer);
+                    }, function() {
+                        timer = setInterval(play, 2000);
+                    });
+
+                })
+            </script>
+            <div class="nav" style="height:460px;">
+
+
+
+
+                <div class="nav-left">
+
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                        <div class="sn">
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS622.jpg" /> <span class="text">剃须刀FS622</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                        <div class="sn">
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn " href="#" target="_blank">选购</a></li>
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS351.jpg" /> <span class="text">剃须刀FS351</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                            <ul class="children">
+                                <li class="list">
+                                    <a class="link" href="#" target="_blank"> <img class="thumb" src="images/FS622.jpg" /> <span class="text">剃须刀FS622</span> </a> <a class="btn" href="#" target="_blank">选购</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+                    <div class="side-nav">
+                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="nice-goods">
+            <script type="text/javascript">
+                $(function() {
+                    $(".list").hover(
+                        function() {
+                            $(this).find(".dask").stop().delay(300).animate({
+                                "top": 0,
+                                "height": 170,
+                                opacity: 1
+                            }, 300)
+                        },
+                        function() {
+                            $(this).find(".dask").stop().animate({
+                                "top": 170,
+                                "height": 0,
+                                opacity: 0
+                            }, 300)
+                        }
+                    );
+                })
+            </script>
+            <div class="list">
+                <a class="dask" href="#"><img class="vm" src="images/FC9602.png" /></a>
+                <a class="in_b" href="#"><img class="vm" src="images/FC9602.jpg" /></a>
+            </div>
+            <div class="list">
+                <a class="dask" href="#"><img class="vm" src="images/FH6273.png" /></a>
+                <a class="in_b" href="#" target="_blank"><img alt="图片" class="vm" src="images/FH6273.jpg" width="412" /></a>
+            </div>
+            <div class="list">
+                <a class="dask" href="#" target="_blank"><img class="vm" src="images/FS373.png" /></a>
+                <a class="in_b last" href="#" target="_blank"><img alt="图片" class="vm" src="images/FS373.jpg" /></a>
+            </div>
+
+        </div>
+        <div class="main-goods">
+            <h2 class="theme">热卖单品</h2>
+
+
+        </div>
+        <div class="sale-goods">
+            <h2 class="theme">特价商品</h2>
+        </div>
     </div>
     <div class="footer"></div>
-    <script src="lib/jquery/jquery-1.12.4.min.js"></script>
+    <div style="position:fixed; right:0px; bottom:96px; z-index:1002;">
+        <a class="chat" href="javascript:"> <img style="border:none;" src="images/578c880225538.jpg"> </a>
+    </div>
+
     <script>
         $(".header").load("html/include/header.html");
         $(".footer").load("html/include/footer.html");
     </script>
     <script type="text/html" id="main-goods">
         <% for (var i = 0; i < list.length; i++) {
-			var prod = list[i];
-		%>
+            var prod = list[i];
+            if (prod.num ){
+        %>
+
             <div class="prod-1">
                 <div class="title">
                     <%= prod.name %>
@@ -44,7 +245,72 @@
                     <span><%= prod.price %></span>元
                 </div>
             </div>
-            <% } %>
+            <% } else{%>
+
+                <div class="prod-2">
+                    <div class="title">
+                        <%= prod.name %>
+                    </div>
+                    <div class="figuer">
+                        <span><%=prod.gigure %></span>
+                    </div>
+                    <div class="img">
+                        <img src="<%= prod.imgSrc %>">
+                    </div>
+                    <div class="price">
+                        <span><%= prod.price %>元</span>
+                        <i>219元</i>
+                    </div>
+                </div>
+
+                <%  }
+                     } %>
+    </script>
+    <script type="text/html" id="sale-goods">
+        <% for (var i = 0; i < list.length; i++) {
+            var prod = list[i];
+            if (prod.size ){
+        %>
+
+            <div class="prod-3">
+                <div class="title">
+                    <%= prod.name %>
+                </div>
+                <div class="size">
+                    <span><%=prod.size %></span>
+                    <i>59元</i>
+                </div>
+                <div class="img">
+                    <img src="<%= prod.imgSrc %>">
+                </div>
+                <div class="sale">
+                    <span><%= prod.price %></span>元
+                </div>
+                <div class="wrap">
+                    <span class="review"><%= prod.review %></span>
+                    <span class="comment"><%= prod.comment %></span>
+                </div>
+            </div>
+            <% } else{%>
+
+                <div class="prod-4">
+                    <div class="title">
+                        <%= prod.name %>
+                    </div>
+                    <div class="figuer">
+                        <span><%=prod.gigure %></span>
+                    </div>
+                    <div class="img">
+                        <img src="<%= prod.imgSrc %>">
+                    </div>
+                    <div class="price">
+                        <span><%= prod.price %>元</span>
+                        <i>219元</i>
+                    </div>
+                </div>
+
+                <%  }
+                     } %>
     </script>
 </body>
 

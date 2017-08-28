@@ -7,3 +7,12 @@ require(["config"], function() {
         });
     });
 })
+require(["config"], function() {
+    require(["jquery", "template"], function($, template) {
+        $.getJSON("/mock/sale.json", function(data) {
+            console.log(data);
+            var html = template("sale-goods", { list: data });
+            $(html).appendTo(".sale-goods");
+        });
+    });
+})

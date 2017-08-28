@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/css/base.css">
+    <link rel="stylesheet" href="../dist/css/header.css">
+    <link rel="stylesheet" href="../dist/css/footer.css">
+    <link rel="stylesheet" href="../dist/css/login.css">
+    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="login" style="height:650px;width:1240px;margin:0 auto;">
+
+        <div class="title">
+            <h1>欢迎登录飞科商城</h1>
+            <div class="lead">
+                <a href="javascript:void(0)" class="in_b current fl tc">注册用户登录</a>
+
+            </div>
+            <div class="cont">
+                <div class="login-form">
+                    <form method="post">
+                        <ul class="fom">
+                            <li class="user"><span class="img"></span>
+                                <input type="text" class="user-name" placeholder="邮箱/手机" />
+
+                            </li>
+
+                            <li class="pwd"><span class="img"></span>
+                                <input type="password" class="password" placeholder="密码" />
+
+                            </li>
+                        </ul>
+                    </form>
+
+
+                </div>
+
+                <div class="sure"><a href="#">登录</a></div>
+
+                <div class="msg">
+                    <span class="free"><input type="checkbox" class="pa" />两周内免登录</span>|
+                    <a href="#" class="forget">忘记密码？</a>
+                </div>
+                <div class="nothing">
+                    <span><a href="#" class="now">立即注册</a></span>
+                    <span>还没有账号？</span>
+                </div>
+
+
+                <div class="check-login">
+                    <fieldset>
+                        <legend align="center" class="text">其他方式登录</legend>
+                    </fieldset>
+                    <ul>
+                        <li>
+                            <a target="_blank" class="wx" href="#" title="微信"></a>
+                        </li>
+                        <li>
+                            <a target="_blank" class="qq" href="#" title="QQ"></a>
+                        </li>
+                        <li>
+                            <a target="_blank" class="sina" href="#" title="新浪微博"></a>
+                        </li>
+                        <li>
+                            <a target="_blank" class="zhi" href="#" title="支付宝"></a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="footer"></div>
+    <script>
+        $(".header").load("/html/include/header.html");
+        $(".footer").load("/html/include/footer.html");
+    </script>
+</body>
+
+</html>
