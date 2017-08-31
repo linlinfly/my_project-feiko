@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/css/base.css">
+    <link rel="stylesheet" href="../dist/css/header.css">
+    <link rel="stylesheet" href="../dist/css/footer.css">
+    <link rel="stylesheet" href="../dist/css/cart.css">
+    <script src="../lib/arttemplate/template-native.js"></script>
+    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="contat">
+        <div class="cart-info">
+            <h1><img src="../images/cart_tit.png"></h1>
+            <div class="cart_sess">
+                <span><label><input type="checkbox" id="chk_all"></label></span>
+
+                <span>商品</span>
+
+                <span>单价</span>
+                <span>数量</span>
+                <span>小计</span>
+                <span>操作</span>
+            </div>
+            <div class="cart_body">
+
+            </div>
+            <div class="does">
+                <a href="#" class="del-all">清空购物车</a>
+                <a href="#" class="del-checked">删除选中项</a>
+            </div>
+            <div class="all">
+                商品总计：<span class="total">0</span>元
+            </div>
+            <div class="chose">
+                <a href="../index.html" class="return">继续购物</a>
+                <a href="#" class="go-sub">去结算</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script>
+        $(".header").load("/html/include/header.html");
+        $(".footer").load("/html/include/footer.html");
+    </script>
+    <script type="text/html" id="cart_template">
+        <% 
+       for (var i = 0, len = products.length; i < len; i++) {
+           var prod = products[i];
+   %>
+            <div class="row">
+                <span><input type="checkbox" class="chk_prod"></span>
+                <span class="id"><%= prod.id %></span>
+                <span><img src="<%= prod.imgSrc %>"></span>
+
+                <span class="name"><%= prod.name %></span>
+                <span class="price"><%= prod.price %></span>
+                <span class="sil"><span class="minus">-</span><input type="text" size="1" value="<%= prod.amount %>" class="amount"><span class="add">+</span></span>
+                <span class="sub"><%= prod.price * prod.amount %></span>
+                <span class="delete"><a href="javascript:void(0)">删除</a></span>
+            </div>
+            <% } %>
+    </script>
+    <script>
+        $(function() {
+            // 页面打开，则读取 cookie
+            $.cookie.json = true;
+            var _products = $.cookie("products") || [];
+            console.log(_products);
+            if (_products.length === 0) {
+                alert("购物车为空....");
+                // location = "detail.html";
+            }
+            // 准备模板数据，渲染
+            var data = {
+                products: _products
+            };
+            var html = template("cart_template", data);
+
+            $(html).appendTo(".cart_body");
+
+
+            $(".cart_body").on("click", "a", function() {
+
+                var _id = $(this).parents(".row").children(".id").text();
+
+                var index = isExist(_id, _products);
+
+                _products.splice(index, 1);
+
+                $.cookie("products", _products, {
+                    expires: 10
+                });
+
+                $(this).parents(".row").remove();
+
+
+                if (_products.length === 0) {
+                    alert("购物车为空");
+                    location = "/detail.html";
+                }
+
+
+                calcTotal();
+            });
+
+            // 数量+/-
+            $(".cart_body").on("click", ".add, .minus", function() {
+
+                var _row = $(this).parents(".row");
+
+                var _amount = _row.find(".amount").val();
+
+                if ($(this).is(".add")) {
+
+                    _amount++;
+                } else {
+                    if (_amount <= 1)
+                        return;
+                    _amount--;
+                }
+
+
+                var id = _row.children(".id").text();
+
+                var index = isExist(id, _products);
+
+                _products[index].amount = _amount;
+
+                $.cookie("products", _products, {
+                    expires: 10
+                });
+
+                _row.find(".amount").val(_amount);
+
+                var _price = _row.children(".price").text();
+
+                _row.children(".sub").text(_price * _amount);
+
+
+                calcTotal();
+            });
+
+
+            var oldAmount = 0;
+            $(".cart_body .amount").focus(function() {
+                oldAmount = $(this).val();
+            }).blur(function() {
+
+                var _val = $(this).val();
+
+                if (!/^[1-9]\d*$/.test(_val)) {
+
+                    $(this).val(oldAmount);
+                    return;
+                }
+
+                var _row = $(this).parents(".row");
+
+                var id = _row.children(".id").text();
+
+                var index = isExist(id, _products);
+
+                _products[index].amount = _val;
+
+                $.cookie("products", _products, {
+                    expires: 10
+                });
+
+                var _price = _row.children(".price").text();
+
+                _row.children(".sub").text(_price * _val);
+
+
+                calcTotal();
+            });
+
+            // 全选
+            $("#chk_all").click(function() {
+                $(".chk_prod").prop("checked", $(this).prop("checked"));
+                calcTotal();
+            });
+
+            // 点每行前复选框
+            $(".row .chk_prod").click(function() {
+                var b = $(".chk_prod:checked").length == $(".chk_prod").length;
+                $("#chk_all").prop("checked", b);
+                // 更新合计
+                calcTotal();
+            });
+
+            // 清空购物车
+            $(".does .del-all").click(function() {
+                var _id = $(".row").children(".id").val();
+
+                var index = isExist(_id, _products);
+
+                _products.splice(index, 1);
+
+                $.cookie("products", _products, {
+                    expires: 10
+                });
+                $(".row").remove();
+                if (_products.length === 0) {
+                    alert("购物车为空");
+                    location = "/detail.html";
+                }
+                calcTotal();
+
+            })
+
+            // 定义函数，计算合计金额
+            function calcTotal() {
+                var sum = 0;
+
+                $(".chk_prod:checked").each(function() {
+                    var _row = $(this).parents(".row");
+                    sum += Number(_row.children(".sub").text());
+                    console.log(sum);
+                });
+                console.log(sum);
+                // 显示合计金额
+                $(".all .total").text(sum);
+            }
+
+
+            function isExist(id, products) {
+                for (var i = 0, len = products.length; i < len; i++) {
+                    if (products[i].id == id)
+                        return i;
+                }
+
+                return -1;
+            }
+        });
+    </script>
+</body>
+
+</html>

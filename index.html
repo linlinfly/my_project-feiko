@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="lib/requirejs/require.js" data-main="js/index"></script>
+
     <link rel="stylesheet" href="dist/css/base.css">
     <link rel="stylesheet" href="dist/css/header.css">
     <link rel="stylesheet" href="dist/css/footer.css">
@@ -14,10 +15,13 @@
     <link rel="stylesheet" href="dist/css/body.css">
     <script src="lib/jquery/jquery-1.12.4.min.js"></script>
 
+
 </head>
+
 
 <body>
     <div class="header"></div>
+
     <div class="content" style="width:1240px;height:2560px;margin:0 auto;">
         <div class="scr-img" style="width:1240px;height:460px;margin:0 auto;">
 
@@ -39,34 +43,34 @@
             </div>
             <script>
                 $(function() {
-                    //第一张显示
+
                     $(".pic li").eq(0).show();
-                    //鼠标滑过手动切换，淡入淡出
+
                     $(".position li").mouseover(function() {
                         $(this).addClass('cur').siblings().removeClass("cur");
                         var index = $(this).index();
-                        i = index; //不加这句有个bug，鼠标移出小圆点后，自动轮播不是小圆点的后一个
-                        // $(".pic li").eq(index).show().siblings().hide();
+                        i = index;
+
                         $(".pic li").eq(index).fadeIn(500).siblings().fadeOut(500);
                     });
                     //自动轮播
                     var i = 0;
                     var timer = setInterval(play, 2000);
-                    //向右切换
+
                     var play = function() {
-                            i++;
-                            i = i > 2 ? 0 : i;
-                            $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
-                            $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
-                        }
-                        //向左切换
+                        i++;
+                        i = i > 2 ? 0 : i;
+                        $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
+                        $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
+                    }
+
                     var playLeft = function() {
-                            i--;
-                            i = i < 0 ? 2 : i;
-                            $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
-                            $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
-                        }
-                        //鼠标移入移出效果
+                        i--;
+                        i = i < 0 ? 2 : i;
+                        $(".position li").eq(i).addClass('cur').siblings().removeClass("cur");
+                        $(".pic li").eq(i).fadeIn(500).siblings().fadeOut(500);
+                    }
+
                     $(".container").hover(function() {
                         clearInterval(timer);
                     }, function() {
@@ -83,7 +87,7 @@
                 <div class="nav-left">
 
                     <div class="side-nav">
-                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                        <a href="html/list.html" target="_blank">电动剃须刀<em>&gt;</em></a>
                         <div class="sn">
                             <ul class="children">
                                 <li class="list">
@@ -112,7 +116,7 @@
                         </div>
                     </div>
                     <div class="side-nav">
-                        <a href="#" target="_blank">电动剃须刀<em>&gt;</em></a>
+                        <a href="html/list.html" target="_blank">电动剃须刀<em>&gt;</em></a>
                         <div class="sn">
                             <ul class="children">
                                 <li class="list">
@@ -194,16 +198,16 @@
                 })
             </script>
             <div class="list">
-                <a class="dask" href="#"><img class="vm" src="images/FC9602.png" /></a>
-                <a class="in_b" href="#"><img class="vm" src="images/FC9602.jpg" /></a>
+                <a class="dask" href="html/detail.html"><img class="vm" src="images/FC9602.png" /></a>
+                <a class="in_b" href="html/detail.html"><img class="vm" src="images/FC9602.jpg" /></a>
             </div>
             <div class="list">
-                <a class="dask" href="#"><img class="vm" src="images/FH6273.png" /></a>
-                <a class="in_b" href="#" target="_blank"><img alt="图片" class="vm" src="images/FH6273.jpg" width="412" /></a>
+                <a class="dask" href="html/detail.html"><img class="vm" src="images/FH6273.png" /></a>
+                <a class="in_b" href="html/detail.html" target="_blank"><img alt="图片" class="vm" src="images/FH6273.jpg" width="412" /></a>
             </div>
             <div class="list">
-                <a class="dask" href="#" target="_blank"><img class="vm" src="images/FS373.png" /></a>
-                <a class="in_b last" href="#" target="_blank"><img alt="图片" class="vm" src="images/FS373.jpg" /></a>
+                <a class="dask" href="html/detail.html" target="_blank"><img class="vm" src="images/FS373.png" /></a>
+                <a class="in_b last" href="html/detail.html" target="_blank"><img alt="图片" class="vm" src="images/FS373.jpg" /></a>
             </div>
 
         </div>

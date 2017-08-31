@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/css/base.css">
+    <link rel="stylesheet" href="../dist/css/header.css">
+    <link rel="stylesheet" href="../dist/css/footer.css">
+    <link rel="stylesheet" href="../css/magnifier.css">
+    <link rel="stylesheet" href="../dist/css/detail.css">
+    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../lib/jquery_plugins/jquery.cookie.js"></script>
+    <script src="../js/magnifier.js"></script>
+
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="nav-s">
+        <div class="conta">
+            <a href="#">首页</a>
+            <span>/</span>
+            <a href="#">飞科电吹风FH6257</a>
+        </div>
+    </div>
+
+    <div class="detail" style="width:1240px;margin:0 auto;">
+        <div class="buys">
+            <h2>成功加入购物车!</h2>
+            <a href="cart.html" class="tocar">去购物车结算</a><span class="close">关闭页面</span>
+
+        </div>
+        <div class="info">
+            <div class="magnifier" id="magnifier1">
+                <div class="magnifier-container">
+                    <div class="images-cover"></div>
+                    <!--当前图片显示容器-->
+                    <div class="move-view"></div>
+                    <!--跟随鼠标移动的盒子-->
+                </div>
+                <div class="magnifier-assembly">
+                    <div class="magnifier-btn">
+                        <span class="magnifier-btn-left">&lt;</span>
+                        <span class="magnifier-btn-right">&gt;</span>
+                    </div>
+                    <!--按钮组-->
+                    <div class="magnifier-line">
+                        <ul class="clearfix animation03">
+                            <li>
+                                <div class="small-img">
+                                    <img src="../images/B1.jpg" class="prod_img" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="small-img">
+                                    <img src="../images/B2.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="small-img">
+                                    <img src="../images/B3.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="small-img">
+                                    <img src="../images/B4.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="small-img">
+                                    <img src="../images/B5.jpg" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--缩略图-->
+                </div>
+                <div class="magnifier-view"></div>
+                <!--经过放大的图片显示容器-->
+            </div>
+
+            <div class="session">
+                <div class="detailMain">
+                    <input type="hidden" value="1" class="prod_id">
+                    <h1 class="detailTitle">飞科电吹风FH6273</h1>
+
+                    <div class="detailInfo">
+
+                        【爆款特卖】尊贵酱紫闪耀 水润负离子 六档调节 启动秀发护理新模式 一见即倾心 秀发更加光滑健康 <br /> 【功能特点】负离子锁水润发 大功率快速干发 六档调节 健康柔风护发 波纹丝热量均衡技术 双重过热保险<br /> 【品质保证】官方商城品质保证　7天无理由退货 15天无理由换货 全国联保2年 售后无忧放心购买
+                        <div class="goods-price">
+
+                            <p>
+                                专柜价：
+                                <span class="" style="text-decoration: line-through;">159</span> 元
+                            </p>
+
+                            <p>
+                                商城价：
+                                <em>￥</em><span class="orange" id="price_current">99</span>
+                                <span style="margin-left:10px; background:orange; background-size:100% 100%;font-size: 15px;padding:5px 10px 5px 10px;color: white;vertical-align: top;">下单立减9.9</span>
+                            </p>
+
+
+                            <style type="text/css">
+                                .mt20 {
+                                    margin-top: 10px;
+                                }
+                            </style>
+                            <a target="_blank" href="/"><img style="margin:10px 0px;" src="../images/p1240.png" /></a>
+
+                        </div>
+
+                        <!-- <script type="text/javascript">
+                        var goods_sn = 'FH6273';
+                        var user_id = '';
+                        var goods_price = '99.00';
+                        var goods_type = 'common';
+                        var sku = "'" + '6949123362739' + "'";
+                        var ext_attr_info = '颜色: 通色  尺码: 通码  ';
+                    </script> -->
+
+                        <div class="sale-info">
+                            <p>客户评价:
+                                <span class="colo">96人评价</span></p>
+                            <p>商品累计月销量 <span class="orang">33027</span></p>
+                        </div>
+                        <div class="choose-num">
+                            <div class="nus">
+                                <span>购买数量：</span>
+                                <div class="number">
+                                    <a href="javascript:;" class="reduce">-</a>
+                                    <input class="put" type="text" id="choose_num" style="text-align:center" value="1" name="choose_num" />
+                                    <a href="javascript:;" class="add">+</a>
+                                </div>
+                                <span>库存<span class="fa" id="actual_number">99703</span>件</span>
+                            </div>
+                        </div>
+                        <div class="detail_btn">
+                            <button style="background:#df7141;">立即购买</button>
+                            <button id="buy">加入购物车</button>
+
+                            <script>
+                                $(function() {
+                                    $("#buy").click(function() {
+                                        $(".buys").show();
+                                        var _row = $(this).parents(".info");
+                                        console.log(_row);
+                                        var _product = {
+                                            id: _row.find(".prod_id").val(),
+                                            imgSrc: _row.find(".prod_img").attr("src"),
+                                            name: _row.find(".detailTitle").text(),
+                                            price: _row.find("#price_current").text(),
+                                            amount: 1
+
+                                        }
+                                        console.log(_product);
+                                        $.cookie.json = true;
+                                        var _products = $.cookie("products") || [];
+
+                                        // console.log(s);
+
+                                        var index = isExist(_product.id, _products);
+                                        console.log(_product.id);
+                                        if (index === -1) {
+
+                                            _products.push(_product);
+                                        } else {
+                                            _products[index].amount++;
+                                        }
+
+                                        $.cookie("products", _products, {
+                                            expires: 10,
+                                            path: "/"
+                                        });
+                                        return false;
+
+                                    })
+
+                                    function isExist(id, products) {
+                                        for (var i = 0, len = products.length; i < len; i++) {
+                                            if (products[i].id == id)
+                                                return i;
+                                        }
+
+                                        return -1;
+                                    }
+                                    $(".close").click(function() {
+                                        $(".buys").hide();
+                                    })
+                                })
+                            </script>
+                        </div>
+                        <div class="promo_info">
+                            <ul>
+                                <li>公告：即日起厦门受金砖会议影响快递仅支持邮政小包，如有变动另行通知，给您带来不便敬请谅解。</li>
+                                <li>积分可享9折优惠，首次注册用户即送1000积分；</li>
+                                <li>全场免运费（部分配件除外）</li>
+                            </ul>
+                        </div>
+                        <div class="like">
+                            <a href="#" class="fl in_b collect" onclick="add_collect_goods('FH6273')">收藏该商品</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <ul class="h-nav">
+
+                <li class="current"><a>商品详情</a></li>
+                <li class="current"><a>规格参数</a></li>
+                <li class="current"><a>商品评价</a></li>
+                <li class="current"><a>售后服务</a></li>
+            </ul>
+
+            <div class="lev">
+                <div class="floor f1" style="height: 5253px">
+                    <img src="../images/1.jpg">
+                    <img src="../images/2.jpg">
+                    <img src="../images/3.jpg">
+                    <img src="../images/4.jpg">
+                    <img src="../images/5.jpg">
+                    <img src="../images/6.jpg">
+                    <img src="../images/7.jpg">
+                    <img src="../images/8.jpg">
+                    <img src="../images/9.jpg">
+                    <img src="../images/10.jpg">
+                </div>
+                <div class="floor f2">
+                    <div class="size">
+                        <fieldset>
+                            <legend align="center">
+                                <h2>规格参数</h2>
+                            </legend>
+                        </fieldset>
+                    </div>
+
+                    <img src="../images/FH6273(2).jpg" style="height:247px;">
+                    <img src="../images/1(2).jpg" style="height:375px;">
+                    <img src="../images/2(2).jpg" style="height:518px;">
+                </div>
+
+
+                <div class="floor f3">
+                    <div class="comment">
+                        <fieldset>
+                            <legend align="center">
+                                <h2>商品评价</h2>
+                            </legend>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="floor f4">
+                    <div class="service">
+                        <fieldset>
+                            <legend align="center">
+                                <h2>售后服务</h2>
+                            </legend>
+                        </fieldset>
+                    </div>
+                    <div class="container">
+                        <div class="sale_protect">
+                            <h1 class="fb">
+                                保修条例：</h1>
+                            <p>
+                                飞科商城所售商品均为正品行货且有正规发票，飞科商城将严格按照国家三包政策，对所售商品提供7天（含）退货、15天（含）换货和二年保修服务。属于三包范围内的商品，保修期内您可以凭飞科商城发票和保修卡在全国各地飞科授权的售后服务中心享受保修服务。</p>
+                            <p>
+                                一、一周内非人为因素并在下列条件下凭有效发票、有效收据凭条或有效售后服务卡包换。</p>
+                            <p>
+                                1、包装完整、没有人为损坏。</p>
+                            <p>
+                                2、发票、收据凭条或售后服务卡必须是有效的，并未被涂改。</p>
+                            <p>
+                                3、同型号调换。</p>
+                            <p>
+                                二、两年以内非人为因素损坏的，凭有效发票、有效收据凭条或有效售后服务卡享有免费保修服务。（易损件的正常更换除外）</p>
+                            <p>
+                                三、两年以上或无法提供有效发票、有效收据凭条或有效售后服务卡，所有配件仅收配件费用，免收其它维修费用。 售后服务电话：400-887-8282</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hide-nav">
+                <div class="inf">
+                    <dl>
+                        <dt><img src="../images/FH6273_000_01.jpg"></dt>
+                        <dd>
+                            <strong>飞科电吹风FH6273</strong>
+                            <p><em>99.00</em></p>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tab">
+
+                    <ul class="snv">
+                        <li><a>商品详情</a></li>
+                        <li><a>规格参数</a></li>
+                        <li><a>商品评价</a></li>
+                        <li><a>售后服务</a></li>
+                    </ul>
+
+                </div>
+                <div class="get">
+                    <div class="stay-btn-box"><a class="goods-buy">立即购买</a><a class="goods-car">加入购物车</a></div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            $(function() {
+                var winHeight = $(window).height();
+                var layoutHeight = $(".floor").offset().top;
+                var autoScorll = true;
+
+                $(window).scroll(function() {
+                    if (autoScorll) {
+                        var _scrolltop = $(window).scrollTop();
+                        if (_scrolltop > layoutHeight - winHeight / 2) {
+                            $(".hide-nav").stop().fadeIn();
+                        } else {
+                            $(".hide-nav").stop().fadeOut();
+                        }
+                        $(".floor").each(function(index, element) {
+                            var _top = $(element).offset().top;
+                            if (_scrolltop > _top - winHeight / 2) {
+                                $(".hide-nav li").eq(index)
+                                    .children("span").show()
+                                    .end()
+                                    .siblings()
+                                    .children("span").hide();
+                            }
+                        });
+                    }
+                });
+                // 点击菜单跳转
+                // $(".side_menu").delegate("li", "click", function(){});
+                $(".snv").on("click", "li", function() {
+                    // 标记点击滚动
+                    autoScroll = false;
+                    // 找出当前点击li的索引
+                    var idx = $(this).index();
+                    // 计算idx对应楼层在文档中的定位
+                    var _top = $(".floor").eq(idx).offset().top;
+                    // 运动动画
+                    $("html, body").stop().animate({
+                        scrollTop: _top
+                    }, function() {
+                        autoScroll = true;
+                    });
+                    // 点击的 li 切换显示样式内容
+                    $(this).children("span").show().end().siblings().children("span").hide();
+                });
+                $(".hide-nav li").hover(function() {
+                    $(this).children("span").show();
+                }, function() {
+                    $(this).children("span").hide();
+                });
+            })
+        </script>
+    </div>
+    <div class="footer"></div>
+    <script>
+        $(".header").load("/html/include/header.html");
+        $(".footer").load("/html/include/footer.html");
+    </script>
+    <script type="text/javascript">
+        $(function() {
+
+            var magnifierConfig = {
+                magnifier: "#magnifier1", //最外层的大容器
+                width: 368, //承载容器宽
+                height: 368, //承载容器高
+                moveWidth: null, //如果设置了移动盒子的宽度，则不计算缩放比例
+                zoom: 3 //缩放比例
+            };
+
+            var _magnifier = magnifier(magnifierConfig);
+
+            /*magnifier的内置函数调用*/
+            /*
+                                //设置magnifier函数的index属性
+                                _magnifier.setIndex(1);
+            
+                                //重新载入主图,根据magnifier函数的index属性
+                                _magnifier.eqImg();
+                            */
+        });
+    </script>
+</body>
+
+</html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../dist/css/footer.css">
     <link rel="stylesheet" href="../dist/css/login.css">
     <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+
 </head>
 
 <body>
@@ -28,10 +29,27 @@
                     <form method="post">
                         <ul class="fom">
                             <li class="user"><span class="img"></span>
-                                <input type="text" class="user-name" placeholder="邮箱/手机" />
+                                <input type="text" class="user-name" placeholder="邮箱/手机" /><span class="user-info"></span>
 
                             </li>
+                            <script>
+                                $(".user-name").blur(function() {
+                                    var user_name = $(".user-name").val();
+                                    console.log(user_name);
+                                    if (user_name != "") {
+                                        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+                                        if (!reg.test(user_name)) {
+                                            $(".user-info").html("用户名格式不正确！")
+                                        } else {
+                                            $.cookie("user_name", user_name, {
+                                                expires: 10,
+                                                path: "/"
+                                            })
 
+                                        }
+                                    }
+                                })
+                            </script>
                             <li class="pwd"><span class="img"></span>
                                 <input type="password" class="password" placeholder="密码" />
 
@@ -42,7 +60,7 @@
 
                 </div>
 
-                <div class="sure"><a href="#">登录</a></div>
+                <div class="sure"><a href="/index.html">登录</a></div>
 
                 <div class="msg">
                     <span class="free"><input type="checkbox" class="pa" />两周内免登录</span>|

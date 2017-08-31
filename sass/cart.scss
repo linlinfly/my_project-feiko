@@ -1,0 +1,211 @@
+.contat {
+    width: 1240px;
+    margin: 0 auto;
+    .cart-info {
+        height: 600px;
+        margin-top: 52px;
+        .cart_sess {
+            color: #9fa0a0;
+            font-size: 14px;
+            margin-top: 28px;
+            height: 40px;
+            display: block;
+            span:nth-child(1) {
+                height: 40px;
+                width: 88px;
+                display: inline-block;
+                margin-left: 35px;
+            }
+            span:nth-child(2) {
+                width: 360px;
+                padding-left: 30px;
+                text-align: left;
+                display: inline-block;
+            }
+            span:nth-child(3) {
+                width: 189px;
+                display: inline-block;
+                text-align: center;
+            }
+            span:nth-child(4) {
+                width: 189px;
+                display: inline-block;
+                text-align: center;
+            }
+            span:nth-child(5) {
+                width: 189px;
+                display: inline-block;
+                text-align: center;
+            }
+            span:nth-child(6) {
+                width: 100px;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+        .cart_body {
+            border-bottom: 2px solid #9fa0a0;
+            .row {
+                height: 140px;
+                .chk_prod {
+                    display: inline-block;
+                    height: 40px;
+                    width: 88px;
+                }
+                .id {
+                    display: none;
+                }
+                img {
+                    width: 120px;
+                    height: 120px;
+                    margin-left: 50px;
+                    display: inline-block;
+                }
+                .name {
+                    line-height: 40px;
+                    display: inline-block;
+                    height: 40px;
+                    width: 200px;
+                    padding: 40px 0;
+                    text-align: center;
+                    vertical-align: top;
+                    font-size: 20px;
+                }
+                .price {
+                    width: 189px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 40px;
+                    vertical-align: top;
+                    font-size: 20px;
+                    padding: 40px 0;
+                    margin-left: 60px;
+                }
+                .sil {
+                    width: 134px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 40px;
+                    font-size: 20px;
+                    margin-left: 20px;
+                    padding: 40px 0;
+                    vertical-align: top;
+                    .minus {
+                        width: 28px;
+                        height: 28px;
+                        line-height: 28px;
+                        border: 1px solid #dfdfdf;
+                        background-color: #fafafa;
+                        float: left;
+                        display: inline;
+                    }
+                    .amount {
+                        width: 74px;
+                        height: 28px;
+                        line-height: 28px;
+                        border-top: 1px solid #dfdfdf;
+                        border-bottom: 1px solid #dfdfdf;
+                        border-left: 0;
+                        border-right: 0;
+                        font-size: 14px;
+                        border-spacing: 0;
+                        display: inline;
+                        text-align: center;
+                    }
+                    .add {
+                        width: 28px;
+                        height: 28px;
+                        line-height: 28px;
+                        border: 1px solid #dfdfdf;
+                        background-color: #fafafa;
+                        float: right;
+                        display: inline;
+                    }
+                }
+                .sub {
+                    width: 189px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 40px;
+                    padding: 40px 0;
+                    vertical-align: top;
+                    margin-left: 35px;
+                    font-size: 20px;
+                }
+                .delete {
+                    width: 78px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 40px;
+                    padding: 40px 0;
+                    vertical-align: top;
+                    margin-left: 20px;
+                }
+            }
+        }
+        .does {
+            width: 500px;
+            height: 20px;
+            color: #9fa0a0;
+            margin-top: 30px;
+            display: block;
+            font-size: 20px;
+            .del-all {
+                margin-left: 30px;
+                padding-left: 30px;
+                background: url("/../images/del.png") no-repeat left center;
+            }
+            .del-checked {
+                margin-left: 30px;
+                padding-left: 30px;
+                background: url("/../images/del.png") no-repeat left center;
+            }
+        }
+        .all {
+            padding: 57px 0 33px;
+            float: right;
+            display: inline;
+            font-size: 20px;
+            padding-right: 20px;
+            .total {
+                padding-left: 70px;
+                padding-right: 20px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 30px;
+                display: inline-block;
+                display: inline;
+                color: #ff7c44;
+            }
+        }
+        .chose {
+            float: right;
+            display: inline;
+            font-size: 20px;
+            margin-top: 165px;
+            margin-right: -225px;
+            .return {
+                width: 147px;
+                height: 36px;
+                line-height: 36px;
+                font-size: 15px;
+                border: 1px solid #ff7c44;
+                background-color: #ff7c44;
+                color: #fff;
+                text-align: center;
+                float: right;
+            }
+            .go-sub {
+                width: 147px;
+                height: 36px;
+                line-height: 36px;
+                font-size: 15px;
+                border: 1px solid #dcdddd;
+                background-color: #fafafa;
+                color: #727171;
+                text-align: center;
+                float: right;
+            }
+        }
+    }
+}

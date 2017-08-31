@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/css/base.css">
+    <link rel="stylesheet" href="../dist/css/header.css">
+    <link rel="stylesheet" href="../dist/css/footer.css">
+    <link rel="stylesheet" href="../dist/css/register.css">
+    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="register" style="height:650px;width:1240px;margin:0 auto;">
+        <div class="title">
+            <h1>欢迎注册飞科商城</h1>
+
+            <div class="cont">
+                <div class="login-form">
+                    <form method="post">
+                        <ul class="fom">
+                            <li class="code"><span class="img"></span>
+                                <input type="text" class="user-code" placeholder="请输入验证码" />
+                                <div class="pic">
+                                    <img src="" class="ckp" />
+                                    <a class="btn" href="#">换一张</a>
+                                </div>
+                                <span class="code-info"></span>
+
+                            </li>
+                            <li class="phone"><span class="img"></span>
+                                <input type="text" class="user-phone" placeholder="请输入手机号码" />
+                                <input type="button" class="find-code" value="获取动态验证码">
+                                <span class="user-info"></span>
+
+                            </li>
+                            <li class="user"><span class="img"></span>
+                                <input type="text" class="user-name" placeholder="请输入手机验证码" /><span class="user-info"></span>
+
+                            </li>
+
+                            <li class="pwd"><span class="img"></span>
+                                <input type="password" class="password" placeholder="请输入密码" />
+
+                            </li>
+                            <li class="pwd"><span class="img"></span>
+                                <input type="password" class="password" placeholder="请输入密码" />
+
+                            </li>
+                        </ul>
+                    </form>
+
+
+                </div>
+                <a class="ps" href="#">《飞科商城用户服务协议》</a>
+                <div class="sure"><a href="#">同意协议并注册</a></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script>
+        $(".header").load("/html/include/header.html");
+        $(".footer").load("/html/include/footer.html");
+    </script>
+    <script>
+        //图片验证码
+        $(document).ready(function() {
+
+            restCode();
+
+            function restCode() {
+                $.ajax({
+                    url: "http://route.showapi.com/932-2",
+                    type: "get",
+                    data: {
+                        showapi_appid: "45005",
+                        showapi_sign: "9402434301da4caeb35401e90d8dbd8d",
+                        length: 4
+
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data)
+                        data = data.showapi_res_body;
+
+                        var sid = data.sid;
+
+
+                        $(".ckp").attr({
+                            src: data.image
+                        })
+                        $(".btn").on("click", function() {
+                            restCode();
+                        })
+                        $(".user-code").blur(function() {
+                            var _code = $(this).val();
+
+                            $.ajax({
+                                url: "http://route.showapi.com/932-1",
+                                type: "get",
+                                data: {
+                                    showapi_appid: "45005",
+                                    showapi_sign: "9402434301da4caeb35401e90d8dbd8d",
+                                    checkcode: _code,
+                                    sid: sid
+                                },
+
+                                success: function(data) {
+                                    console.log(data);
+                                    data = data.showapi_res_body;
+                                    var valid = data.valid;
+                                    console.log(data);
+                                    if (valid) {
+                                        $(".code-info").html("验证码输入正确");
+                                    } else {
+                                        $(".code-info").html("验证码输入有误");
+                                    }
+                                }
+                            });
+                        })
+                    }
+                });
+            }
+
+        })
+
+        //手机号码格式验证
+        $(".user-name").blur(function() {
+            var user_name = $(".user-name").val();
+            console.log(user_name);
+            if (user_name != "") {
+                var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+                if (!reg.test(user_name)) {
+                    $(".user-info").html("用户名格式不正确！")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

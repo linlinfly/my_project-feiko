@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/requirejs/require.js" data-main="/js/list"></script>
+    <link rel="stylesheet" href="../dist/css/base.css">
+    <link rel="stylesheet" href="../dist/css/header.css">
+    <link rel="stylesheet" href="../dist/css/footer.css">
+    <link rel="stylesheet" href="../dist/css/list.css">
+    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="list">
+        <div class="nav-s">
+            <div class="conta">
+                <a href="#">首页</a>
+                <span>/</span>
+                <a href="#">飞科电吹风FH6257</a>
+            </div>
+        </div>
+        <div class="sid-nav">
+
+            <a href="javascript:void:0;" class="valo">
+                销量
+            </a>
+            <a href="javascript:void:0;" class="new">
+                新品
+            </a>
+            <a href="javascript:void:0;" class="prize">
+                价格
+            </a>
+            <a href="javascript:void:0;" class="people">
+                人气
+            </a>
+
+        </div>
+        <div class="list-body">
+
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script>
+        $(".header").load("/html/include/header.html");
+        $(".footer").load("/html/include/footer.html");
+    </script>
+    <script type="text/html" id="list-goods">
+        <% for (var i = 0; i < list.length; i++) {
+            var prod = list[i];
+        %>
+            <div class="prod-list">
+                <div class="img">
+                    <a href="detail.html">
+                    <img src="<%= prod.imgSrc %>">
+                    </a>
+                </div>
+                <div class="price">
+                    ￥<span><%=prod.price %></span>
+                </div>
+                <div class="name">
+                    <%= prod.name %>
+                </div>
+                <div class="figuer">
+                    <span><%= prod.figuer %></span>
+                </div>
+
+
+                <div class="wrap">
+                    本款产品月销量：<span class="sales"><%= prod.sales %></span>
+                    <span>|</span> 评价：
+                    <span class="comment"><%= prod.comment %></span>
+                </div>
+            </div>
+
+            <%  
+    } %>
+    </script>
+
+</body>
+
+</html>
